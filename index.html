@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iceberg Meme</title>
+  <link rel="stylesheet" href="static/style.css">
+  <link href="https://fonts.cdnfonts.com/css/andy-pro" rel="stylesheet">
+</head>
+<body>
+	<button class="persistent-button" onclick="window.open('https://discord.gg/RNyeUEvqny', '_blank')">
+		<img src="static/discord.svg" alt="Discord" class="discord-logo">
+	</button>
+  <div class="container">
+    
+
+    <img src="static/iceberg.png" alt="Iceberg Meme" id="iceberg-image">
+
+    <div class="entries">
+      <a href="https://youtu.be/jnhtIYht11A" 
+		target="_blank" class="entry" style="top: 2%; left: 50%;">Killing Dungeon Guardian</a>
+		
+      <a href="https://terraria.wiki.gg/wiki/Hoik" 
+		target="_blank" class="entry" style="top: 3%; left: 10%;">Hoiks</a>
+		
+	  <a href="https://docs.google.com/document/d/1fKToUoorzX6c2r5r_Xuv41bPw8QeEy--YXKxuu7wtJo/" 
+		target="_blank" class="entry" style="top: 17%; left: 70%;">TPvP</a>
+		
+		
+      <a href="https://web.archive.org/web/20160709113734/http://www.terrariaonline.com/threads/if-youre-using-tmod-or-know-someone-who-is-read-this-immediately.34616/" 
+		target="_blank" class="entry" style="top: 95%; left: 20%;">Black Hat in Pryaxis</a>
+		
+	  <a href="https://youtu.be/8RDeT7Zo8BE?t=1840" 
+		target="_blank" class="entry" style="top: 50%; left: 15%;">Astral Projection</a>
+
+	  <a href="#" 
+		target="_blank" class="openPopup" data-popup="1" style="top: 80%; left: 65%;">Mannequin Player</a>
+		
+	  <a href="https://terrariacommunityarchive.pythonanywhere.com/glitches/2/" 
+		target="_blank" class="entry" style="top: 38%; left: 23%;">Chicken Teriyaki</a>
+		
+	  <a href="#" 
+		target="_blank" class="openPopup" data-popup="2" style="top: 30%; left: 15%;">Redcode</a>
+		
+	  <a href="#" 
+		target="_blank" class="openPopup" data-popup="3" style="top: 90%; left: 50%;">Terrarium Animation Patterns</a>
+		
+	  <a href="https://docs.google.com/document/d/1-iQtY-I_fE6eOxAd5bs9QAx6fEqvGyh87jachsDItOk/" 
+		target="_blank" class="entry" style="top: 23%; left: 35%;">Transmutation</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="4" style="top: 90%; left: 15%;">Hidden Cutscenes</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="5" style="top: 50%; left: 55%;">Deleting Liquids</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="6" style="top: 35%; left: 55%;">Wire Ticks</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="7" style="top: 17%; left: 20%;">RNG Numbers</a>
+		
+	<a href="https://youtu.be/g8C0Tg4wfVU" 
+		target="_blank" class="entry" style="top: 65%; left: 50%;">Replacing the Destroyer's Head</a>
+		
+	<a href="https://youtu.be/g8C0Tg4wfVU" 
+		target="_blank" class="entry" style="top: 30%; left: 35%;">Housing Score</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="8" style="top: 5%; left: 20%;">Entity, Projectile and Item Limits</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="9" style="top: 20%; left: 50%;">Polar Crafting</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="10" style="top: 50%; left: 33%;">Different Lines of Sight</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="11" style="top: 78%; left: 33%;">Fishing for Iron Pickaxes</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="12" style="top: 61%; left: 10%;">Natural Sapphire Gemspark Blocks</a>
+		
+    </div>
+  </div>
+   <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content" id="popupContent">
+            <h2 id="popupTitle">Popup Title</h2>
+			<img id="popupImage" style="max-width: 500px; display: none; margin: 10px auto; display: block;" alt="">
+            <p id="popupText">Sample</p>
+            <br>
+            <a href="#" class="close-popup" id="closePopup">Close</a>
+        </div>
+    </div>
+	<script>
+        const popupOverlay = document.getElementById('popupOverlay');
+        const popupContent = document.getElementById('popupContent');
+        const popupImage = document.getElementById('popupImage');
+        const popupTitle = document.getElementById('popupTitle');
+        const popupText = document.getElementById('popupText');
+        const closePopup = document.getElementById('closePopup');
+        const openPopupLinks = document.querySelectorAll('.openPopup');
+
+        // Data for each popup
+        const popupData = {
+			0: {
+                title: "",
+				text: "",
+                image: ""
+            },
+            1: {
+                title: "Mannequin Player",
+                text: "This effect can only be achieved by modifying the player file with 3-rd party software. Setting your clothing style to 10 turns the player into a mannequin. Setting it to higher values gives you a womannequin skin.",
+                image: "playequin.png"
+            },
+            2: {
+                title: "Redcode",
+                text: "Redcode is what people call the code written by Redigit in the earlier days of Terraria which still remains today. Even though we only have access to decompiled code, the mistakes, lack of optimization and oversights are still very noticable.",
+                image: ""
+            },
+            3: {
+                title: "Terrarium animation patterns",
+                text: "The critters of terrariums may appear to move around separately from each other, but in fact they do each animate in a sequence if they overlap an x or y coordinate that is a multiple of 100. Similarly, they will animate if a caged animal is placed directly ontop of another one, regardless of the previous condition.This can be especially useful for texture packing to create large scale, animated images that move in sync.<br><br> Credits to DontaeRiceArt for discovering and explaining this mechanic.",
+                image: "terrariumpatterns.gif"
+            },
+			4: {
+                title: "Hidden cutscenes",
+				text: "Remember the trailers for dd2 and dst crossovers? Probably not. However, they featured in-game cutscenes. And these cutscenes are still in the code (DSTFilm.cs and DD2Film.cs), so with a few modifications you can play them yourself!",
+                image: "dd2film.gif"
+            },
+			5: {
+                title: "Deleting liquids",
+				text: "You can do this with certain furniture, actuated blocks or coins. There's some sort of ranking on what liquid can eat what as seen in the picture: <b>lava > honey > shimmer > water</b>. Higher rank liquids will continuously eat the liquids on top, and will settle on top of lower rank. <br>For the cases where the liquid settles on top of another liquid that isn't water, you can update the liquid on top with coins to make the bottom liquid eat a higher ranking liquid, but eventually it will settle again. If you relog in these cases, the liquid on top will all be deleted.",
+                image: "liquiddel.png"
+            },
+			6: {
+                title: "Wire Ticks",
+				text: "Logic gates always emit a signal the next wire tick after one or more logic lamps get activated. Many wire ticks can happen within one game tick. However, one logic gate cannot output multiple signals within one game tick. It will produce smoke instead.<br><br>Here's a simple example using the picture above:<br>Wire tick 1:<br> - Faulty logic gate detects input<br> - First torch is turned OFF<br> - Normal logic gate lamp is turned ON and logic gate detects input<br><br>Wire tick 2:<br> - Faulty logic gate outputs (will causes smoke)<br> - First torch is turned ON<br> - Normal logic gate lamp is turned OFF (will cause smoke)<br> - Second torch is turned OFF",
+                image: "wiretick.png"
+            },
+			7: {
+                title: "RNG Numbers",
+				text: "Each world seed generates a bunch of random numbers than range from 0.0 to 1.0 and some world features consistently use a specific random number in the sequence, as in the shimmer's horizontal position is (almost) always the 2nd random number of the seed. The dungeon's brick color also uses the 2nd number, so if you know what this number is then you know what the the shimmer's X position is and as well as the dungeon's color.<br><br><b>1st RNG Number:</b><br> - Jungle Shrine Brick;<br> - Shimmer Depth;<br> - \"First\" floating island X position - will contain Shiny Red Balloon;<br> - Glowing Moss color;<br> - \"First\" dungeon chest room depth.<br><br><b>2nd RNG Number:</b><br> - Dungeon Brick Color;<br> - Shimmer X Position<br> - Guide name.<br><br><b>3rd RNG Number:</b><br> - World's initial wind speed;<br> - Hardmode V biome order (inconsistent).",
+                image: "rngaether.png"
+            },
+			8: {
+                title: "Entity, Projectile and Item Limits",
+				text: "There's a hard cap of 200 NPCs, 1000 projectiles and 400 items.<br>Entity limit can be used to prevent or reduce natural spawns (like using EoC's minions to freely roam the dungeon);<br>By hitting the projectile cap you can prevent some mob attacks and trivialize certain boss fights;<br>You cannot get any advantages by hitting the dropped item limit. However, heart and mana statues only check for hearts and stars in the first 200 dropped items in the world. Now this can cause the statues to ignore their limit of 10 hearts/stars worldwide and produce up to 100 drops at once.",
+                image: ""
+            },
+			9: {
+                title: "Polar Crafting",
+				text: "More known as the achievement or guide crafting glitch. This term came from the person who first revealed it to the public, polarber.<br>As soon as you get the achievement, if you click the achievement popup while in the guide crafting menu with an item and then close the achievements menu, you'll gain the ability to \"craft\" any item the guide shows you.<br>Here's an example of it being used: <a href=\"https://youtu.be/FsCMGByvjxA\">https://youtu.be/FsCMGByvjxA</a>",
+                image: ""
+            },
+			10: {
+                title: "Different Lines of Sight",
+				text: "The game uses 2 types of Line of Sight methods.<br>Each method traces a path towards the center of a target.<br>Type A is simply a 3-wide line that checks for any collision with a solid block (Collision.CanHitLine()).<br>Type B checks for solid blocks in a straight line Up/Down/Left/Right and then diagonally towards the target, But at the same time, it also checks both sides of the line for any collision with FULL solid blocks. if BOTH sides have full solid blocks, then LoS is blocked.<br><br>LoS type A examples:<br> - Moon Lord's beam;<br> - Nebula Floater's laser.<br> - Check if the player is looking at Medusa.<br><br>LoS type B examples:<br> - Retinazer phase 2;<br> - Check if Meduse should \"stare\" at the player;<br> - Golem's head fireballs;<br> - Check if Nebula Floater should move towards the player;<br> - Player's melee swings;<br> - Smart cursor for walls.",
+                image: "los.gif"
+            },
+			11: {
+                title: "Fishing for Iron Pickaxes",
+				text: "Switching your bait to/from truffle worms while the bobber is moving up and down before reeling it in can cause some interesting effects.<br>If you do it while fishing in the ocean with truffle worms, you'll be catching iron pickaxes (because it defaults to the item with an ID of 1).<br>You can also summon Duke Fishron anywhere in the world by switching to truffle worms while the bobber is moving.<br>Switching can be done by either using autopause, trashing or moving the bait to some kind of storage.",
+                image: "ironpick.gif"
+            },
+			12: {
+                title: "Natural Sapphire Gemspark Blocks",
+				text: "It appears that Terraria devs used Gemspark blocks for testing and debugging and left it in. It can be found under chests and life crystals as their logic is done after ocean cave generation. As they require tiles underneath them, this tile can become valid and stay throughout the rest of worldgen.",
+                image: "gemspark.png"
+            },
+        };
+
+        // Open popup
+        openPopupLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const popupId = this.getAttribute('data-popup');
+                const data = popupData[popupId];
+
+                // Set popup content dynamically
+                popupTitle.textContent = data.title;
+                popupText.innerHTML = data.text;
+                popupText.innerHTML = data.text;
+                popupImage.src = "static/images/" + data.image;
+                popupImage.style.display = "block";
+
+                popupOverlay.style.display = 'block';
+            });
+        });
+
+        // Close popup via close button
+        closePopup.addEventListener('click', function(event) {
+            event.preventDefault();
+            popupOverlay.style.display = 'none';
+        });
+
+        // Close popup by clicking outside the content
+        popupOverlay.addEventListener('click', function(event) {
+            if (!popupContent.contains(event.target)) {
+                popupOverlay.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
