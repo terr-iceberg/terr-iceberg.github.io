@@ -31,10 +31,10 @@
 		target="_blank" class="entry" style="top: 95%; left: 20%;">Black Hat in Pryaxis</a>
 		
 	  <a href="https://youtu.be/8RDeT7Zo8BE?t=1840" 
-		target="_blank" class="entry" style="top: 50%; left: 15%;">Astral Projection</a>
+		target="_blank" class="entry" style="top: 48%; left: 12%;">Astral Projection</a>
 
 	  <a href="#" 
-		target="_blank" class="openPopup" data-popup="1" style="top: 80%; left: 65%;">Mannequin Player</a>
+		target="_blank" class="openPopup" data-popup="1" style="top: 80%; left: 63%;">Mannequin Player</a>
 		
 	  <a href="https://terrariacommunityarchive.pythonanywhere.com/glitches/2/" 
 		target="_blank" class="entry" style="top: 38%; left: 23%;">Chicken Teriyaki</a>
@@ -52,7 +52,7 @@
 		target="_blank" class="openPopup" data-popup="4" style="top: 90%; left: 15%;">Hidden Cutscenes</a>
 		
 	<a href="#" 
-		target="_blank" class="openPopup" data-popup="5" style="top: 50%; left: 55%;">Deleting Liquids</a>
+		target="_blank" class="openPopup" data-popup="5" style="top: 52%; left: 55%;">Deleting Liquids</a>
 		
 	<a href="#" 
 		target="_blank" class="openPopup" data-popup="6" style="top: 35%; left: 55%;">Wire Ticks</a>
@@ -73,13 +73,22 @@
 		target="_blank" class="openPopup" data-popup="9" style="top: 20%; left: 50%;">Polar Crafting</a>
 		
 	<a href="#" 
-		target="_blank" class="openPopup" data-popup="10" style="top: 50%; left: 33%;">Different Lines of Sight</a>
+		target="_blank" class="openPopup" data-popup="10" style="top: 50%; left: 31%;">Different Lines of Sight</a>
 		
 	<a href="#" 
 		target="_blank" class="openPopup" data-popup="11" style="top: 78%; left: 33%;">Fishing for Iron Pickaxes</a>
 		
 	<a href="#" 
 		target="_blank" class="openPopup" data-popup="12" style="top: 61%; left: 10%;">Natural Sapphire Gemspark Blocks</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="13" style="top: 22%; left: 5%;">True World Borders</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="14" style="top: 66%; left: 5%;">Wrong Liquid Fishing</a>
+		
+	<a href="#" 
+		target="_blank" class="openPopup" data-popup="15" style="top: 76%; left: 5%;">Terraria Community Archive</a>
 		
     </div>
   </div>
@@ -167,6 +176,21 @@
                 title: "Natural Sapphire Gemspark Blocks",
 				text: "It appears that Terraria devs used Gemspark blocks for testing and debugging and left it in. It can be found under chests and life crystals as their logic is done after ocean cave generation. As they require tiles underneath them, this tile can become valid and stay throughout the rest of worldgen.",
                 image: "gemspark.png"
+            },
+			13: {
+                title: "True World Borders",
+				text: "You may have faced a situation where you cleansed the entirety of the world but the Dryad still tells you there's 1% left. And if you asked about it, you are normally told there are a few blocks outside world borders.<br>Using map viewers you can indeed see that there are some weird 2-blocks wide stripes specifically on the left side. And if you investigate further, you'll notice there are 40-41 tiles that can't be seen on each side.",
+                image: ""
+            },
+			14: {
+                title: "Wrong Liquid Fishing",
+				text: "The algorithm that checks liquid type is, for whatever reason, shifted downwards. So, if the pool is one block deep, it results in the game scanning solid block and defaulting to water.<br>In the picture the sand block has lava inside it. The game checks all blocks withing the red outline for liquid type. Because of the shift downwards, the algorithm sees lava and sets the pool type to lava.<br>It's worth noting that liquids have ranks (water < honey < lava), so it will always set the pool type to the highest ranked liquid in it.",
+                image: "liquid_check.png"
+            },
+			15: {
+                title: "Terraria Community Archive",
+				text: "This is Kuz's attempt to preserve and organize all Terraria community's important creations and discoveries on a single website. Unfortunately, the development quickly slowed down and now there's been no news for months.<br><a href="https://terrariacommunityarchive.pythonanywhere.com/" target="_blank">https://terrariacommunityarchive.pythonanywhere.com/</a>",
+                image: ""
             },
         };
 
